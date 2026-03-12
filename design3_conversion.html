@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design 3 | Local PRO Waterproofing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1d4ed8;
+            --accent: #ef4444;
+            --text-main: #334155;
+            --bg-light: #f8fafc;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Lato', sans-serif; color: var(--text-main); background: var(--bg-light); line-height: 1.5; }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; font-weight: 800; color: #0f172a; }
+        
+        /* Top Utility Bar */
+        .top-bar { background: var(--primary); color: white; padding: 0.5rem 5%; display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 700; }
+        .top-bar a { color: white; text-decoration: none; background: var(--accent); padding: 0.2rem 0.8rem; border-radius: 20px; }
+
+        /* Urgent Header */
+        header { background: white; padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); width: 100%; z-index: 1000; transition: all 0.3s ease; }
+        .header-sticky { position: fixed; top: 0; padding: 1rem 5%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .logo { font-size: 2rem; font-weight: 900; color: var(--primary); letter-spacing: -1px; transition: transform 0.3s ease; cursor: pointer; }
+        .logo:hover { transform: scale(1.02); }
+        .header-contact { display: flex; align-items: center; gap: 1rem; }
+        .phone-huge { font-size: 1.5rem; font-weight: 800; color: #0f172a; text-decoration: none; transition: color 0.2s ease; }
+        .phone-huge:hover { color: var(--accent); }
+        
+        /* Split Hero */
+        .hero { display: flex; flex-wrap: wrap; background: url('https://images.unsplash.com/photo-1549488497-246fad0fbbc2?auto=format&fit=crop&q=80') center/cover; position: relative; }
+        .hero::before { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.9); }
+        .hero-left { flex: 1; min-width: 300px; padding: 6rem 5%; position: relative; z-index: 1; animation: slideInLeft 0.8s ease-out forwards; }
+        @keyframes slideInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+        .hero-left h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; color: var(--primary); }
+        .hero-left p { font-size: 1.25rem; margin-bottom: 2rem; font-weight: 700; color: #475569; }
+        .bullet-points { list-style: none; margin-bottom: 2rem; }
+        .bullet-points li { margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 700; display: flex; align-items: center; gap: 10px; transition: transform 0.2s ease; cursor: default; }
+        .bullet-points li:hover { transform: translateX(5px); }
+        .bullet-points li::before { content: '✓'; color: var(--accent); font-weight: bold; font-size: 1.5rem; }
+        
+        /* Form Card */
+        .hero-right { flex: 1; min-width: 300px; padding: 4rem 5%; position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; animation: slideInRight 0.8s ease-out forwards; }
+        @keyframes slideInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+        .lead-form { background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); width: 100%; max-width: 450px; border-top: 6px solid var(--accent); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .lead-form:hover { transform: translateY(-5px); box-shadow: 0 25px 30px -5px rgba(0,0,0,0.15); }
+        .lead-form h3 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .lead-form p { text-align: center; margin-bottom: 1.5rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
+        .form-group { margin-bottom: 1rem; position: relative; }
+        .form-group input, .form-group select { width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 6px; font-family: inherit; font-size: 1rem; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.2); }
+        .btn-action { width: 100%; background: var(--accent); color: white; border: none; padding: 1.2rem; font-size: 1.2rem; font-weight: 800; border-radius: 6px; cursor: pointer; text-transform: uppercase; transition: all 0.2s ease; box-shadow: 0 4px 6px rgba(239, 68, 68, 0.3); }
+        .btn-action:hover { background: #dc2626; transform: translateY(-3px); box-shadow: 0 6px 12px rgba(239, 68, 68, 0.4); }
+        .btn-action:active { transform: translateY(0); box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3); }
+
+        /* Trust Banner */
+        .trust-banner { background: #0f172a; color: white; padding: 2rem 5%; display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; gap: 1rem; }
+        .trust-item h4 { font-size: 1.2rem; color: #fbbf24; }
+        
+        /* Services Grid */
+        .services { padding: 5rem 5%; text-align: center; }
+        .services h2 { font-size: 2.5rem; margin-bottom: 3rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .card { background: white; border-radius: 8px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; transition: all 0.3s ease; cursor: pointer; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); border-color: var(--primary); }
+        .card img { width: 100%; height: 220px; object-fit: cover; border-bottom: 4px solid var(--accent); transition: transform 0.5s ease; }
+        .card:hover img { transform: scale(1.05); }
+        .card-content { padding: 2rem; flex: 1; display: flex; flex-direction: column; background: white; position: relative; z-index: 2; }
+        .card-content h3 { margin-bottom: 1rem; font-size: 1.5rem; transition: color 0.3s ease; }
+        .card:hover .card-content h3 { color: var(--primary); }
+        .card-content p { color: #64748b; margin-bottom: 1.5rem; flex: 1; }
+        .btn-outline { display: inline-block; padding: 0.8rem 1.5rem; border: 2px solid var(--primary); color: var(--primary); text-decoration: none; font-weight: 700; border-radius: 4px; text-align: center; transition: all 0.3s ease; }
+        .card:hover .btn-outline { background: var(--primary); color: white; }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .top-bar { flex-direction: column; text-align: center; gap: 10px; padding: 1rem; }
+            header { flex-direction: column; gap: 1rem; padding: 1rem; text-align: center; }
+            .header-sticky { padding: 0.5rem 1rem; }
+            .hero { flex-direction: column; padding-top: 80px; } /* Space for sticky header */
+            .hero-left { padding: 3rem 1rem; text-align: center; }
+            .hero-left h1 { font-size: 2.5rem; }
+            .bullet-points li { justify-content: center; text-align: left; }
+            .hero-right { padding: 2rem 1rem 4rem 1rem; }
+            .lead-form { width: 100%; border-radius: 8px; padding: 1.5rem; }
+            .trust-banner { flex-direction: column; gap: 2rem; }
+            .services { padding: 3rem 1rem; }
+            .services h2 { font-size: 2rem; margin-bottom: 2rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <span>🚨 24/7 Emergency Repairs Available</span>
+        <a href="#">Click to WhatsApp Us</a>
+    </div>
+
+    <header id="main-header">
+        <div class="logo" style="display: flex; align-items: center; gap: 12px;">
+            <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=100&h=100&fit=crop" alt="QuickSeal Logo" style="width: 45px; height: 45px; border-radius: 8px;">
+            <div>QuickSeal PROs</div>
+        </div>
+        <div class="header-contact">
+            <span style="font-weight:700; color: var(--text-main);">CALL FOR FREE ESTIMATE:</span>
+            <a href="tel:555-0100" class="phone-huge">(555) 123-0100</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-left">
+            <h1>Stop Leaks Before They Ruin Your Home.</h1>
+            <p>Fast, affordable, and permanent waterproofing solutions for roofs, basements, and terraces.</p>
+            <ul class="bullet-points">
+                <li>100% Free On-Site Inspections</li>
+                <li>Same-Day Response Times</li>
+                <li>Written Lifetime Warranties</li>
+                <li>Licensed, Bonded, and Insured</li>
+            </ul>
+        </div>
+        
+        <div class="hero-right">
+            <div class="lead-form">
+                <h3>Get Your Free Quote</h3>
+                <p>Save 10% When You Book Today</p>
+                <form onsubmit="event.preventDefault(); alert('Form submitted!');">
+                    <div class="form-group"><input type="text" placeholder="Full Name" required></div>
+                    <div class="form-group"><input type="tel" placeholder="Phone Number" required></div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Select Service Needed...</option>
+                            <option>Roof Leak Repair</option>
+                            <option>Basement Waterproofing</option>
+                            <option>Terrace Sealing</option>
+                            <option>Bathroom Seepage</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-action">Get Free Estimate Now ➔</button>
+                    <p style="margin-top: 1rem; font-size: 0.8rem; color: #64748b; font-weight: normal; text-transform: none;">Absolutely no obligation. We respect your privacy.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="trust-banner">
+        <div class="trust-item">
+            <h4>★★★★★</h4>
+            <p>150+ 5-Star Reviews</p>
+        </div>
+        <div class="trust-item">
+            <h4>🏆 Best of 2026</h4>
+            <p>Local Contractors Award</p>
+        </div>
+        <div class="trust-item">
+            <h4>🛡️ Guaranteed</h4>
+            <p>10-Year Leak-Free Promise</p>
+        </div>
+    </div>
+
+    <section class="services">
+        <h2>We Solve Any Water Problem</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1518384401463-d3876163c195?auto=format&fit=crop&q=80" alt="Roof Waterproofing">
+                <div class="card-content">
+                    <h3>Roof Waterproofing</h3>
+                    <p>Stop ceiling damage with our rapid-cure membrane systems.</p>
+                    <a href="#" class="btn-outline">Get Quote</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80" alt="Basement Sealing">
+                <div class="card-content">
+                    <h3>Basement Sealing</h3>
+                    <p>Keep your lowest level bone-dry, permanently.</p>
+                    <a href="#" class="btn-outline">Get Quote</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80" alt="Terrace Repairs">
+                <div class="card-content">
+                    <h3>Terrace Repairs</h3>
+                    <p>Fix cracked tiles and pooling water on exterior spaces.</p>
+                    <a href="#" class="btn-outline">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Sticky Header Logic
+        const header = document.getElementById('main-header');
+        const hero = document.querySelector('.hero');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-sticky');
+            } else {
+                header.classList.remove('header-sticky');
+            }
+        });
+
+        // Form Animation Logic
+        const formInputs = document.querySelectorAll('.form-group input, .form-group select');
+        formInputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.style.transform = 'scale(1.02)';
+                input.parentElement.style.transition = 'transform 0.2s';
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
