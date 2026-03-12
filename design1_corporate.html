@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design 1 | Corporate Waterproofing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #495057;
+            --accent: #f97316;
+            --light: #f8f9fa;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Open Sans', sans-serif; color: var(--secondary); background: var(--light); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--primary); }
+        
+        /* Header */
+        header { background: var(--white); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100;}
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .logo span { color: var(--accent); }
+        nav gap { display: flex; gap: 2rem; }
+        nav a { text-decoration: none; color: var(--primary); font-weight: 600; transition: color 0.3s; }
+        nav a:hover { color: var(--accent); }
+        .btn-primary { background: var(--accent); color: var(--white); padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 4px; font-weight: 600; transition: background 0.3s; border: none; cursor: pointer; }
+        .btn-primary:hover { background: #ea580c; }
+        
+        /* Hero Section */
+        .hero { background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('https://images.unsplash.com/photo-1541888082470-fa41508906a5?auto=format&fit=crop&q=80') center/cover; color: var(--white); padding: 8rem 5%; text-align: center; }
+        .hero h1 { color: var(--white); font-size: 3.5rem; margin-bottom: 1.5rem; }
+        .hero p { font-size: 1.25rem; max-width: 700px; margin: 0 auto 2.5rem; color: #e2e8f0; }
+        
+        /* Trust Badges */
+        .trust-badges { display: flex; justify-content: center; gap: 4rem; padding: 2.5rem 5%; background: var(--white); border-bottom: 1px solid #e1e4e8; flex-wrap: wrap;}
+        .badge { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: var(--primary); }
+        .badge svg { width: 24px; height: 24px; color: var(--accent); }
+
+        /* Services Grid */
+        .services { padding: 6rem 5%; max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .service-card { background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid var(--accent); transition: transform 0.3s ease; display: flex; flex-direction: column; }
+        .service-card img { width: 100%; height: 200px; object-fit: cover; }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-content { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
+        .service-content h3 { margin-top: 0; margin-bottom: 1rem; font-size: 1.25rem; }
+        .service-content p { font-size: 0.95rem; color: var(--secondary); margin-bottom: 1.5rem; flex: 1; }
+        .service-link { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-top: auto; }
+        
+        /* Footer */
+        footer { background: var(--primary); color: var(--white); padding: 4rem 5% 2rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto; margin-bottom: 3rem; }
+        .footer-col h3 { color: var(--white); margin-bottom: 1.5rem; font-size: 1.2rem; }
+        .footer-col p { color: #cbd5e1; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: #94a3b8; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=100&h=100&fit=crop" alt="StructSeal Logo" style="width: 40px; height: 40px; border-radius: 4px;">
+            <div>Struct<span>Seal</span></div>
+        </div>
+        <nav style="display:flex; gap: 2rem;">
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">Projects</a>
+            <a href="#">About Us</a>
+        </nav>
+        <a href="#" class="btn-primary">Get a Quote</a>
+    </header>
+
+    <section class="hero">
+        <h1>Protecting Your Assets from the Elements</h1>
+        <p>Industry-leading commercial and residential waterproofing solutions designed to extend the lifespan of your structures.</p>
+        <a href="#" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Request a Free Inspection</a>
+    </section>
+
+    <div class="trust-badges">
+        <div class="badge">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            ISO 9001 Certified
+        </div>
+        <div class="badge">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            15+ Years Experience
+        </div>
+        <div class="badge">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            10-Year Warranty
+        </div>
+    </div>
+
+    <section class="services">
+        <div class="section-header">
+            <h2>Our Core Services</h2>
+            <p>Comprehensive waterproofing systems engineered for absolute protection.</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1518384401463-d3876163c195?auto=format&fit=crop&q=80" alt="Commercial Roofing">
+                <div class="service-content">
+                    <h3>Commercial Roofing</h3>
+                    <p>Advanced membrane and liquid coating systems for flat and low-slope commercial roofs. Highly reflective and durable.</p>
+                    <a href="#" class="service-link">Learn More &rarr;</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80" alt="Basement Sealing">
+                <div class="service-content">
+                    <h3>Basement Sealing</h3>
+                    <p>Interior and exterior foundation waterproofing, French drain installation, and structural crack injection.</p>
+                    <a href="#" class="service-link">Learn More &rarr;</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80" alt="Terrace & Balcony">
+                <div class="service-content">
+                    <h3>Terrace & Balcony</h3>
+                    <p>Seamless polyurethane membranes and specialized tiling systems to prevent leakage into lower levels.</p>
+                    <a href="#" class="service-link">Learn More &rarr;</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80" alt="Bathroom & Wet Areas">
+                <div class="service-content">
+                    <h3>Bathroom & Wet Areas</h3>
+                    <p>Under-tile waterproofing treatments ensuring zero seepage in high-moisture interior environments.</p>
+                    <a href="#" class="service-link">Learn More &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>StructSeal Engineering</h3>
+                <p>Premium waterproofing contractors serving the metropolitan area with state-of-the-art protection systems.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>1 (800) 555-SEAL</p>
+                <p>estimates@structseal.com</p>
+                <p>124 Industrial Way, Suite B</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <p>About Us</p>
+                <p>Our Process</p>
+                <p>Warranty Info</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 StructSeal Waterproofing Services. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
